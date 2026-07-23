@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const pool = require('./config/db');
+const authRouter = require('./routes/authRoutes')
+
+app.use(express.json())
+app.use('/api/auth', authRouter)
 
 app.get('/', (req, res) => {
     res.send('Servidor funcionando')
