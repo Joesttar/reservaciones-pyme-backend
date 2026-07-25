@@ -6,6 +6,7 @@ const authRouter = require('./routes/authRoutes')
 
 app.use(express.json())
 app.use('/api/auth', authRouter)
+app.use('/api/reservaciones', require('./routes/reservacionesRoutes'))
 
 app.get('/', (req, res) => {
     res.send('Servidor funcionando')

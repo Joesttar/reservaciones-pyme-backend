@@ -49,12 +49,12 @@ const login = async (req, res) => {
         )
 
         res.status(201).json(
-            {accessToken,
+            {token,
              refreshToken,
              usuario: {
                 id: usuario.id,
                 nombre: usuario.nombre,
-                email:usuario.email
+                email: usuario.email
              }   
             })
 
@@ -84,7 +84,7 @@ const tokenRefresh = async (req, res) => {
         const newAccessToken = jwt.sign(
             {id: payload.id},
             process.env.JWT_SECRET,
-            {expiraIn: '15m'}
+            {expiresIn: '15m'}
         )
         res.json({ accessToken: newAccessToken })
     
