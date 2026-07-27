@@ -3,8 +3,12 @@ const app = express();
 const PORT = 3000;
 const pool = require('./config/db');
 const authRouter = require('./routes/authRoutes')
+const cors = require('cors')
 
 app.use(express.json())
+app.use(cors({
+    origin: 'http://localhost:5173'
+}))
 app.use('/api/auth', authRouter)
 app.use('/api/reservaciones', require('./routes/reservacionesRoutes'))
 
