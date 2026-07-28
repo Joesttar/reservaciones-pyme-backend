@@ -1,11 +1,11 @@
  import { useState } from 'react';
- import registroUsuario from '../services/authService';
+ import { registroUsuario } from '../services/authService';
  
  const RegistroForm = () => {
     const [formData, setFormData] = useState({
         nombre: '',
-        apellidos_paternos: '',
-        apellidos_maternos: '',
+        apellido_paterno: '',
+        apellido_materno: '',
         email: '',
         password: ''
     })
@@ -42,7 +42,7 @@
         name='apellido_paterno'
         value={formData.apellidos_paterno}
         onChange={handleChange}
-        placeholder='Apellido Paterno'
+        placeholder='Apellidos Paterno'
         />
         
         <input

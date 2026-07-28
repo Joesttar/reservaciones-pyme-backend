@@ -1,4 +1,5 @@
 import  RegistroForm  from './components/RegistroForm'
+import  LoginForm  from './components/LoginForm'
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <div>
         <h1>Reservaciones PyME</h1>
         <RegistroForm />
+        <LoginForm />
     </div>
   )
 }
