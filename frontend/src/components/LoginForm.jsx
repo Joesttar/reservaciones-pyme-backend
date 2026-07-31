@@ -7,6 +7,8 @@ const LoginForm = () => {
         password:''
     })
 
+    const [mensaje, setMensaje] = useState('')
+
     const handleChange = (event) => {
         setFormData({
             ...formData,
@@ -20,12 +22,13 @@ const LoginForm = () => {
         try {
             const resultado = await loginUsuario(formData)
             localStorage.setItem('token', resultado.token)
-            console.log('Login exitoso', resultado)
+            setMensaje('Login exitoso')
         } catch (error) {
-            console.log('Error:', error.message)
+            setMensaje(error.message)
         }
     }
     return (
+        <div>
         <form onSubmit={handleSubmit}>
             <input 
             type="email"
@@ -44,6 +47,9 @@ const LoginForm = () => {
             />
             <button type="submit">Iniciar Sesion</button>
         </form>
+
+        {mensaje && <p>{mensaje}</p>}
+    </div>
     )
 }
 
