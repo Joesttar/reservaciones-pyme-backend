@@ -30,6 +30,7 @@ const LoginForm = () => {
     return (
         <div>
         <form onSubmit={handleSubmit}>
+            <div className="loginFila">
             <input 
             type="email"
             name="email"
@@ -45,7 +46,9 @@ const LoginForm = () => {
             onChange={handleChange}
             placeholder="Password"
             />
-            <button type="submit">Iniciar Sesion</button>
+            </div>
+            <button className="registrameLogin" type="submit">Iniciar Sesion</button>
+        
         </form>
 
         {mensaje && <p>{mensaje}</p>}

@@ -28,7 +28,9 @@ const FormularioReservacion = ({onReservacionCreada}) => {
         }
         
         return (
+            <div>
             <form onSubmit={handleSumbit}>
+                <div className='formulario'>
                 <input 
                     type='text'
                     name='servicio'
@@ -36,21 +38,27 @@ const FormularioReservacion = ({onReservacionCreada}) => {
                     onChange={handleChange}
                     placeholder='Servicio (ej. Hotel, Concierto)'
                 />
+                </div>
 
+                <div className='formulario'>
                 <input 
                     type='date'
                     name='fecha'
                     value={formData.fecha}
                     onChange={handleChange}
                 />
+                </div>
 
+                <div className='formulario'>
                   <input 
                     type='time'
                     name='hora'
                     value={formData.hora}
                     onChange={handleChange}
                 />
+                </div >
 
+                <div className='formulario'>
                   <input 
                     type='text'
                     name='notas'
@@ -58,8 +66,10 @@ const FormularioReservacion = ({onReservacionCreada}) => {
                     onChange={handleChange}
                     placeholder='Notas (opcional)'
                 />
-                <button type='submit'>Crear reservacion</button>
+                </div>
+                <button className='crear' type='submit'>Crear reservacion</button>
             </form>
+            </div>
         )
 }
 

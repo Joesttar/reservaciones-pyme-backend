@@ -4,6 +4,7 @@ import  LoginForm  from './components/LoginForm'
 import  ListaReservaciones from './components/ListaRservaciones'
 import FormularioReservacion from './components/FormularioReservacion'
 import { obtenerReservaciones } from './services/reservacionesService'
+import './App.css'
 
 function App() {
 const [reservaciones, setReservaciones ] = useState([])
@@ -22,7 +23,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <div>
+    <div className='app.container'>
         <h1>Reservaciones PyME</h1>
         <RegistroForm />
         <LoginForm />

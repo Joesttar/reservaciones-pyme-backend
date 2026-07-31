@@ -29,6 +29,7 @@
 
  return (
     <form onSubmit={handleSubmit}>
+        <div className='fila'>
         <input
         type='text'
         name='nombre'
@@ -36,7 +37,8 @@
         onChange={handleChange}
         placeholder='Nombre'
         />
-        
+        </div>
+        <div className='fila'>
         <input
         type='text'
         name='apellido_paterno'
@@ -52,7 +54,9 @@
         onChange={handleChange}
         placeholder='Apellido Materno'
         />
+        </div>
 
+        <div className='fila'>
         <input 
         type='email'
         name='email'
@@ -60,7 +64,6 @@
         onChange={handleChange}
         placeholder='Email'
         />
-
         <input
         type='password'
         name='password'
@@ -68,7 +71,8 @@
         onChange={handleChange}
         placeholder='Contraseña'
         />
-        <button type='submit'>Registrarme</button>
+        </div>
+        <button className='registrame' type='submit'>Registrarme</button>
     </form>
  )
 }
