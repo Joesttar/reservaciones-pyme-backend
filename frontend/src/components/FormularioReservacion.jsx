@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { crearReservacion } from '../services/reservacionesService';
 
-const FormularioReservacion = () => {
+const FormularioReservacion = ({onReservacionCreada}) => {
         const [formData, setFormData] = useState({
             servicio: '',
             fecha: '',
@@ -19,8 +19,9 @@ const FormularioReservacion = () => {
         const handleSumbit = async (event) => {
             event.preventDefault()
             try {
-                const resultado = await crearReservacion(formData)
-                console.log('Reservacion creada', resultado)
+                await crearReservacion(formData)
+                setFormData({servicio: '', fecha: '', hora: '', notas: ''})
+                onReservacionCreada()
             } catch(error){
                 console.log('Error:', error.message)
             }
@@ -44,7 +45,7 @@ const FormularioReservacion = () => {
                 />
 
                   <input 
-                    type='date'
+                    type='time'
                     name='hora'
                     value={formData.hora}
                     onChange={handleChange}
